@@ -40,18 +40,18 @@ function TrendDot(value) {
 
   if (trend === "UP") {
     return (
-      <span className="inline-block w-2 h-2 rounded-full bg-green-500 ml-1"></span>
+      <span className="inline-block w-2 h-2 rounded-full bg-green-500 ml-2"></span>
     );
   }
 
   if (trend === "DOWN") {
     return (
-      <span className="inline-block w-2 h-2 rounded-full bg-red-500 ml-1"></span>
+      <span className="inline-block w-2 h-2 rounded-full bg-red-500 ml-2"></span>
     );
   }
 
   return (
-    <span className="inline-block w-2 h-2 rounded-full bg-zinc-500 ml-1"></span>
+    <span className="inline-block w-2 h-2 rounded-full bg-zinc-500 ml-2"></span>
   );
 }
 
@@ -61,6 +61,10 @@ export default async function Home() {
   const totalEunoia = data[1]?.[1];
   const totalSingel = data[2]?.[1];
   const totalCollabs = data[3]?.[1];
+
+  const dailyEunoia = data[1]?.[3];
+  const dailySingel = data[2]?.[3];
+  const dailyCollabs = data[3]?.[3];
 
   const totalCatalog = data[4]?.[1];
 
@@ -80,47 +84,175 @@ export default async function Home() {
       <div className="max-w-7xl mx-auto p-8">
 
         {/* HEADER */}
-        <div className="mb-10">
-          <h1 className="text-5xl font-bold mb-2">
-            NUCA STREAMS
-          </h1>
+        {/* HERO */}
 
-          <p className="text-zinc-400">
-            Spotify Statistics Tracker
-          </p>
+        <div className="relative mb-12 overflow-hidden rounded-3xl">
 
-          <p className="text-sm text-zinc-500 mt-2">
-            Last Update: {lastUpdate}
-          </p>
+          <Image
+            src="/banner/nuca.png"
+            alt="Nuca"
+            width={1600}
+            height={900}
+            className="
+              w-full
+              h-[320px]
+              object-cover
+            "
+          />
+
+          <div
+            className="
+              absolute inset-0
+              bg-gradient-to-t
+              from-black
+              via-black/40
+              to-transparent
+            "
+          />
+
+          <div
+            className="
+              absolute bottom-0
+              left-0
+              p-8
+            "
+          >
+
+            <h1 className="text-5xl font-black">
+              NUCHART STREAMS
+            </h1>
+
+            <p className="text-zinc-300 mt-2">
+              Spotify Statistics Dashboard
+            </p>
+
+            <div className="flex gap-6 mt-4 text-sm text-zinc-400">
+
+              <span>
+                {formatNumber(totalCatalog)} Streams
+              </span>
+
+              <span>
+                {formatNumber(monthlyListeners)} Monthly Listeners
+              </span>
+
+              <span>
+                {formatNumber(followers)} Followers
+              </span>
+
+            </div>
+
+          </div>
+
         </div>
 
         {/* MAIN STATS */}
         <div className="grid md:grid-cols-4 gap-4 mb-10">
 
-          <div className="bg-zinc-900 rounded-2xl p-6">
-            <p className="text-zinc-400">Total Catalog</p>
-            <h2 className="text-3xl font-bold mt-2">
+          <div
+              className="
+              bg-zinc-900/60
+              backdrop-blur-xl
+              border
+              border-zinc-800
+              rounded-3xl
+              p-6
+              transition-all
+              duration-300
+              hover:scale-[1.03]
+              hover:border-blue-500
+              hover:shadow-lg
+              hover:shadow-blue-500/10
+            ">
+            <p className="
+              text-zinc-500
+              uppercase
+              tracking-widest
+              text-xs
+              font-semibold
+              ">📈 Total Catalog</p>
+            <h2 className="text-4xl font-black mt-3">
               {formatNumber(totalCatalog)}
             </h2>
           </div>
 
-          <div className="bg-zinc-900 rounded-2xl p-6">
-            <p className="text-zinc-400">Monthly Listeners</p>
-            <h2 className="text-3xl font-bold mt-2">
+          <div
+              className="
+              bg-zinc-900/60
+              backdrop-blur-xl
+              border
+              border-zinc-800
+              rounded-3xl
+              p-6
+              transition-all
+              duration-300
+              hover:scale-[1.03]
+              hover:border-blue-500
+              hover:shadow-lg
+              hover:shadow-blue-500/10
+            ">
+            <p className="
+              text-zinc-500
+              uppercase
+              tracking-widest
+              text-xs
+              font-semibold
+              ">🎧 Monthly Listeners</p>
+            <h2 className="text-4xl font-black mt-3">
               {formatNumber(monthlyListeners)}
             </h2>
           </div>
 
-          <div className="bg-zinc-900 rounded-2xl p-6">
-            <p className="text-zinc-400">Followers</p>
-            <h2 className="text-3xl font-bold mt-2">
+          <div
+              className="
+              bg-zinc-900/60
+              backdrop-blur-xl
+              border
+              border-zinc-800
+              rounded-3xl
+              p-6
+              transition-all
+              duration-300
+              hover:scale-[1.03]
+              hover:border-blue-500
+              hover:shadow-lg
+              hover:shadow-blue-500/10
+            ">
+            <p className="
+              text-zinc-500
+              uppercase
+              tracking-widest
+              text-xs
+              font-semibold
+              ">👥  Followers</p>
+            <h2 className="text-4xl font-black mt-3">
               {formatNumber(followers)}
             </h2>
           </div>
 
-          <div className="bg-zinc-900 rounded-2xl p-6">
-            <p className="text-zinc-400">Daily Streams</p>
-            <h2 className="text-3xl font-bold mt-2">
+          <div
+              className="
+              bg-zinc-900/60
+              backdrop-blur-xl
+              border
+              border-zinc-800
+              rounded-3xl
+              p-6
+              transition-all
+              duration-300
+              hover:scale-[1.03]
+              hover:border-blue-500
+              hover:shadow-lg
+              hover:shadow-blue-500/10
+            ">
+            <p className="
+              text-zinc-500
+              uppercase
+              tracking-widest
+              text-xs
+              font-semibold
+              ">🔥 Daily Streams</p>
+            <h2 className="text-4xl font-black mt-3">
               {formatNumber(dailyStreamsTotal)}
             </h2>
           </div>
@@ -135,78 +267,204 @@ export default async function Home() {
         <div className="grid md:grid-cols-3 gap-4 mb-12">
 
           {/* EUNOIA */}
-          <div className="bg-zinc-900 rounded-2xl p-6">
-            <div className="flex items-center gap-4">
+          <div className="
+            bg-zinc-900/60
+            backdrop-blur-xl
+            border
+            border-zinc-800
+            rounded-3xl
+            p-6
+            transition-all
+            duration-300
+            hover:scale-[1.03]
+            hover:border-blue-500
+            hover:shadow-xl
+            hover:shadow-blue-500/10
+          ">
+
+            <div className="text-center">
 
               <Image
                 src="/covers/eunoia.jpg"
                 alt="Eunoia"
-                width={70}
-                height={70}
-                className="rounded-xl"
+                width={100}
+                height={100}
+                className="
+                  rounded-2xl
+                  mx-auto
+                  border
+                  border-zinc-700
+                  shadow-lg
+                "
               />
 
-              <div>
-                <p className="text-zinc-400">
-                  Eunoia
-                </p>
+              <p className="
+                text-zinc-500
+                uppercase
+                tracking-[3px]
+                text-xs
+                font-semibold
+                mt-4
+              ">
+                Eunoia
+              </p>
 
-                <h2 className="text-2xl font-bold mt-1">
-                  {formatNumber(totalEunoia)}
-                </h2>
+              <h2 className="text-4xl font-black mt-3">
+                {formatNumber(totalEunoia)}
+              </h2>
+
+              <div className="
+                inline-flex
+                items-center
+                gap-2
+                mt-4
+                px-4
+                py-2
+                rounded-full
+                bg-blue-500/10
+                text-blue-400
+                text-sm
+                font-medium
+              ">
+                🔥 {formatNumber(dailyEunoia)}
               </div>
 
             </div>
+
           </div>
 
           {/* SINGEL */}
-          <div className="bg-zinc-900 rounded-2xl p-6">
-            <div className="flex items-center gap-4">
+          <div className="
+            bg-zinc-900/60
+            backdrop-blur-xl
+            border
+            border-zinc-800
+            rounded-3xl
+            p-6
+            transition-all
+            duration-300
+            hover:scale-[1.03]
+            hover:border-blue-500
+            hover:shadow-xl
+            hover:shadow-blue-500/10
+          ">
+
+            <div className="text-center">
 
               <Image
                 src="/covers/singel.jpg"
-                alt="Singel"
-                width={70}
-                height={70}
-                className="rounded-xl"
+                alt="Eunoia"
+                width={100}
+                height={100}
+                className="
+                  rounded-2xl
+                  mx-auto
+                  border
+                  border-zinc-700
+                  shadow-lg
+                "
               />
 
-              <div>
-                <p className="text-zinc-400">
-                  Singel
-                </p>
+              <p className="
+                text-zinc-500
+                uppercase
+                tracking-[3px]
+                text-xs
+                font-semibold
+                mt-4
+              ">
+                Eunoia
+              </p>
 
-                <h2 className="text-2xl font-bold mt-1">
-                  {formatNumber(totalSingel)}
-                </h2>
+              <h2 className="text-4xl font-black mt-3">
+                {formatNumber(totalSingel)}
+              </h2>
+
+              <div className="
+                inline-flex
+                items-center
+                gap-2
+                mt-4
+                px-4
+                py-2
+                rounded-full
+                bg-blue-500/10
+                text-blue-400
+                text-sm
+                font-medium
+              ">
+                🔥 {formatNumber(dailySingel)}
               </div>
 
             </div>
+
           </div>
 
           {/* COLLABS */}
-          <div className="bg-zinc-900 rounded-2xl p-6">
-            <div className="flex items-center gap-4">
+          <div className="
+            bg-zinc-900/60
+            backdrop-blur-xl
+            border
+            border-zinc-800
+            rounded-3xl
+            p-6
+            transition-all
+            duration-300
+            hover:scale-[1.03]
+            hover:border-blue-500
+            hover:shadow-xl
+            hover:shadow-blue-500/10
+          ">
+
+            <div className="text-center">
 
               <Image
                 src="/covers/collabs.jpg"
-                alt="Collabs"
-                width={70}
-                height={70}
-                className="rounded-xl"
+                alt="Eunoia"
+                width={100}
+                height={100}
+                className="
+                  rounded-2xl
+                  mx-auto
+                  border
+                  border-zinc-700
+                  shadow-lg
+                "
               />
 
-              <div>
-                <p className="text-zinc-400">
-                  Collabs
-                </p>
+              <p className="
+                text-zinc-500
+                uppercase
+                tracking-[3px]
+                text-xs
+                font-semibold
+                mt-4
+              ">
+                Eunoia
+              </p>
 
-                <h2 className="text-2xl font-bold mt-1">
-                  {formatNumber(totalCollabs)}
-                </h2>
+              <h2 className="text-4xl font-black mt-3">
+                {formatNumber(totalCollabs)}
+              </h2>
+
+              <div className="
+                inline-flex
+                items-center
+                gap-2
+                mt-4
+                px-4
+                py-2
+                rounded-full
+                bg-blue-500/10
+                text-blue-400
+                text-sm
+                font-medium
+              ">
+                🔥 {formatNumber(dailyCollabs)}
               </div>
 
             </div>
+
           </div>
 
         </div>
@@ -216,18 +474,56 @@ export default async function Home() {
 
           {/* EUNOIA */}
           <div>
-            <h2 className="text-xl font-bold mb-4">
-              Daily Streams Eunoia
-            </h2>
+            <div className="mb-4">
+              <h2 className="text-xl font-bold">
+                Daily Streams Eunoia
+              </h2>
 
-            <div className="overflow-hidden rounded-2xl bg-zinc-900">
+            </div>
+
+            <div
+              className="
+              overflow-hidden
+              rounded-3xl
+              bg-zinc-900/60
+              backdrop-blur-xl
+              border
+              border-zinc-800
+              shadow-xl
+              shadow-black/30
+              "
+            >
 
               <table className="w-full text-sm">
-                <thead className="bg-zinc-800">
+                <thead className="bg-zinc-950">
                   <tr>
-                    <th className="p-3 text-left">Track</th>
-                    <th className="p-3 text-right">Streams</th>
-                    <th className="p-3 text-right">Daily</th>
+                    <th className="
+                      p-4
+                      text-left
+                      text-xs
+                      uppercase
+                      tracking-widest
+                      text-zinc-500
+                      font-semibold
+                      ">Track</th>
+                    <th className="
+                        p-4
+                        text-right
+                        text-xs
+                        uppercase
+                        tracking-widest
+                        text-zinc-500
+                        font-semibold
+                        ">Streams</th>
+                    <th className="
+                        p-4
+                        text-right
+                        text-xs
+                        uppercase
+                        tracking-widest
+                        text-zinc-500
+                        font-semibold
+                    ">Daily</th>
                   </tr>
                 </thead>
 
@@ -235,7 +531,13 @@ export default async function Home() {
                   {topEunoia.map((row, index) => (
                     <tr
                       key={index}
-                      className="border-t border-zinc-800"
+                      className="
+                        border-t
+                        border-zinc-800
+                        hover:bg-zinc-800/30
+                        transition-all
+                        duration-200
+                        "
                     >
 
                       <td className="p-3">
@@ -244,23 +546,47 @@ export default async function Home() {
                           <Image
                             src="/covers/eunoia.jpg"
                             alt="Eunoia"
-                            width={40}
-                            height={40}
-                            className="rounded-md"
+                            width={52}
+                            height={52}
+                            className="
+                            rounded-xl
+                            border
+                            border-zinc-700
+                            shadow-md
+                            "
                           />
 
-                          <span>
-                            {data[row]?.[5]}
-                          </span>
+                          <div>
+                            <p className="
+                              font-semibold
+                              text-white
+                              leading-tight
+                            ">
+                              {data[row]?.[5]}
+                            </p>
+
+                          </div>
 
                         </div>
                       </td>
 
-                      <td className="p-3 text-right">
+                      <td className="
+                        p-4
+                        text-right
+                        font-semibold
+                        text-zinc-200
+                        tabular-nums
+                        ">
                         {formatNumber(data[row]?.[6])}
                       </td>
 
-                      <td className="p-3 text-right">
+                      <td className="
+                        p-4
+                        text-right
+                        font-semibold
+                        text-zinc-200
+                        tabular-nums
+                        ">
                         <div className="flex items-center justify-end">
                           <span>{formatNumber(data[row]?.[7])}</span>
                           {TrendDot(data[row]?.[8])}
@@ -276,18 +602,56 @@ export default async function Home() {
 
           {/* SINGEL */}
           <div>
-            <h2 className="text-xl font-bold mb-4">
-              Daily Streams Singel
-            </h2>
+            <div className="mb-4">
+              <h2 className="text-xl font-bold">
+                Daily Streams Singels
+              </h2>
 
-            <div className="overflow-hidden rounded-2xl bg-zinc-900">
+            </div>
+
+            <div
+              className="
+              overflow-hidden
+              rounded-3xl
+              bg-zinc-900/60
+              backdrop-blur-xl
+              border
+              border-zinc-800
+              shadow-xl
+              shadow-black/30
+              "
+            >
 
               <table className="w-full text-sm">
-                <thead className="bg-zinc-800">
+                <thead className="bg-zinc-950">
                   <tr>
-                    <th className="p-3 text-left">Track</th>
-                    <th className="p-3 text-right">Streams</th>
-                    <th className="p-3 text-right">Daily</th>
+                    <th className="
+                      p-4
+                      text-left
+                      text-xs
+                      uppercase
+                      tracking-widest
+                      text-zinc-500
+                      font-semibold
+                      ">Track</th>
+                    <th className="
+                        p-4
+                        text-right
+                        text-xs
+                        uppercase
+                        tracking-widest
+                        text-zinc-500
+                        font-semibold
+                    ">Streams</th>
+                    <th className="
+                        p-4
+                        text-right
+                        text-xs
+                        uppercase
+                        tracking-widest
+                        text-zinc-500
+                        font-semibold
+                    ">Daily</th>
                   </tr>
                 </thead>
 
@@ -295,7 +659,13 @@ export default async function Home() {
                   {topSingel.map((row, index) => (
                     <tr
                       key={index}
-                      className="border-t border-zinc-800"
+                      className="
+                        border-t
+                        border-zinc-800
+                        hover:bg-zinc-800/30
+                        transition-all
+                        duration-200
+                        "
                     >
 
                       <td className="p-3">
@@ -306,22 +676,45 @@ export default async function Home() {
                               "/covers/eunoia.jpg"
                             }
                             alt={data[row]?.[5]}
-                            width={40}
-                            height={40}
-                            className="rounded-md"
+                            width={52}
+                            height={52}
+                            className="
+                            rounded-xl
+                            border
+                            border-zinc-700
+                            shadow-md
+                            "
                           />
 
-                          <span>
-                            {data[row]?.[5]}
-                          </span>
+                          <div>
+                            <p className="
+                              font-semibold
+                              text-white
+                              leading-tight
+                            ">
+                              {data[row]?.[5]}
+                            </p>
+
+                          </div>
                         </div>
                       </td>
 
-                      <td className="p-3 text-right">
+                      <td className="
+                        p-4
+                        text-right
+                        font-semibold
+                        text-zinc-200
+                        tabular-nums
+                        ">
                         {formatNumber(data[row]?.[6])}
                       </td>
 
-                      <td className="p-3 text-right">
+                      <td className="
+                        p-4
+                        text-right
+                        font-bold
+                        tabular-nums
+                        ">
                         <div className="flex items-center justify-end">
                           <span>{formatNumber(data[row]?.[7])}</span>
                           {TrendDot(data[row]?.[8])}
@@ -337,18 +730,56 @@ export default async function Home() {
 
           {/* COLLABS */}
           <div>
-            <h2 className="text-xl font-bold mb-4">
-              Daily Streams Collabs
-            </h2>
+            <div className="mb-4">
+              <h2 className="text-xl font-bold">
+                Daily Streams Collaboration
+              </h2>
 
-            <div className="overflow-hidden rounded-2xl bg-zinc-900">
+            </div>
+
+            <div
+              className="
+              overflow-hidden
+              rounded-3xl
+              bg-zinc-900/60
+              backdrop-blur-xl
+              border
+              border-zinc-800
+              shadow-xl
+              shadow-black/30
+              "
+            >
 
               <table className="w-full text-sm">
-                <thead className="bg-zinc-800">
+                <thead className="bg-zinc-950">
                   <tr>
-                    <th className="p-3 text-left">Track</th>
-                    <th className="p-3 text-right">Streams</th>
-                    <th className="p-3 text-right">Daily</th>
+                    <th className="
+                      p-4
+                      text-left
+                      text-xs
+                      uppercase
+                      tracking-widest
+                      text-zinc-500
+                      font-semibold
+                      ">Track</th>
+                    <th className="
+                        p-4
+                        text-right
+                        text-xs
+                        uppercase
+                        tracking-widest
+                        text-zinc-500
+                        font-semibold
+                    ">Streams</th>
+                    <th className="
+                        p-4
+                        text-right
+                        text-xs
+                        uppercase
+                        tracking-widest
+                        text-zinc-500
+                        font-semibold
+                    ">Daily</th>
                   </tr>
                 </thead>
 
@@ -356,7 +787,13 @@ export default async function Home() {
                   {topCollabs.map((row, index) => (
                     <tr
                       key={index}
-                      className="border-t border-zinc-800"
+                      className="
+                        border-t
+                        border-zinc-800
+                        hover:bg-zinc-800/30
+                        transition-all
+                        duration-200
+                        "
                     >
 
                       <td className="p-3">
@@ -367,22 +804,44 @@ export default async function Home() {
                               "/covers/eunoia.jpg"
                             }
                             alt={data[row]?.[9]}
-                            width={40}
-                            height={40}
-                            className="rounded-md"
+                            width={52}
+                            height={52}
+                            className="
+                            rounded-xl
+                            border
+                            border-zinc-700
+                            shadow-md
+                            "
                           />
 
-                          <span>
-                            {data[row]?.[9]}
-                          </span>
+                          <div>
+                            <p className="
+                              font-semibold
+                              text-white
+                              leading-tight
+                            ">
+                              {data[row]?.[5]}
+                            </p>
+                            
+                          </div>
                         </div>
                       </td>
 
-                      <td className="p-3 text-right">
+                      <td className="
+                        p-4
+                        text-right
+                        font-bold
+                        tabular-nums
+                        ">
                         {formatNumber(data[row]?.[10])}
                       </td>
 
-                      <td className="p-3 text-right">
+                      <td className="
+                        p-4
+                        text-right
+                        font-bold
+                        tabular-nums
+                        ">
                         <div className="flex items-center justify-end">
                           <span>{formatNumber(data[row]?.[11])}</span>
                           {TrendDot(data[row]?.[12])}
@@ -399,6 +858,22 @@ export default async function Home() {
         </div>
 
       </div>
+
+      <footer className="
+        mt-16
+        border-t
+        border-zinc-800
+        py-8
+        text-center
+      ">
+        <p className="text-zinc-500 text-sm">
+          Nuchart Streams © 2026
+        </p>
+
+        <p className="text-zinc-600 text-xs mt-2">
+          Unofficial Spotify Statistics Tracker
+        </p>
+      </footer>
     </main>
   );
 }
