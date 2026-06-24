@@ -52,7 +52,7 @@ export default function SingelTable({
                 className="
                 w-[110px]
                 md:w-[140px]
-                px-3 md:px-4
+                px-2 sm:px-3 md:px-4
                 py-4
                 text-right
                 text-[11px]
@@ -69,7 +69,7 @@ export default function SingelTable({
                 className="
                 w-[110px]
                 md:w-[140px]
-                px-3 md:px-4
+                px-2 sm:px-3 md:px-4
                 py-4
                 text-right
                 text-[11px]
@@ -96,7 +96,7 @@ export default function SingelTable({
                 duration-200
                 "
               >
-                <td className="px-4 py-3">
+                <td className="px-2 sm:px-3 md:px-4 py-3">
                   <div className="flex items-center gap-3">
                     <Image
                       src={
@@ -133,7 +133,7 @@ export default function SingelTable({
 
                 <td
                   className="
-                  px-3 md:px-4
+                  px-2 sm:px-3 md:px-4
                   py-3
                   text-right
                   font-semibold
@@ -147,7 +147,7 @@ export default function SingelTable({
 
                 <td
                   className="
-                  px-3 md:px-4
+                  px-2 sm:px-3 md:px-4
                   py-3
                   text-right
                   font-semibold
@@ -156,7 +156,7 @@ export default function SingelTable({
                   whitespace-nowrap
                   "
                 >
-                  <div className="flex items-center justify-end gap-3">
+                  <div className="flex items-center justify-end gap-0.5">
                     <span>
                       {formatNumber(data[row]?.[7])}
                     </span>

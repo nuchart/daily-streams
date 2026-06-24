@@ -152,7 +152,7 @@ export default function EunoiaTable({
                   whitespace-nowrap
                   "
                 >
-                  <div className="flex items-center justify-end gap-3">
+                  <div className="flex items-center justify-end gap-0.5">
                     <span>
                       {formatNumber(data[row]?.[7])}
                     </span>
