@@ -75,19 +75,18 @@ export default function CollabsTable({
 
               <th
                 className="
-                w-[95px]
-                sm:w-[115px]
-                md:w-[130px]
+                w-[100px]
+                sm:w-[120px]
+                md:w-[140px]
 
                 px-2
                 py-3
 
                 text-right
                 text-[10px]
-
+                md:text-[11px]
                 uppercase
-                tracking-[2px]
-
+                tracking-[3px]
                 text-zinc-500
                 font-semibold
                 "
@@ -145,7 +144,7 @@ export default function CollabsTable({
                       duration-300
 
                       group-hover:scale-105
-                      group-hover:border-blue-500/30
+                      group-hover:border-zinc-600
                       "
                     />
 
@@ -162,7 +161,7 @@ export default function CollabsTable({
                         transition-colors
                         duration-300
 
-                        group-hover:text-blue-50
+                        group-hover:text-zinc-100
                         "
                         title={data[row]?.[9]}
                       >
@@ -197,18 +196,9 @@ export default function CollabsTable({
                 {/* DAILY */}
                 <td
                   className="
-                  px-2
-                  py-3
-
+                  py-4
+                  pr-4
                   text-right
-                  text-xs
-                  sm:text-sm
-
-                  font-medium
-                  text-zinc-300
-
-                  tabular-nums
-                  whitespace-nowrap
                   "
                 >
                   <div
@@ -216,22 +206,23 @@ export default function CollabsTable({
                     flex
                     items-center
                     justify-end
-
-                    min-w-[95px]
-                    sm:min-w-[115px]
-                    md:min-w-[130px]
                     "
                   >
                     <span
                       className="
-                      w-[72px]
-                      sm:w-[88px]
-                      md:w-[100px]
+                      w-[80px]
+                      sm:w-[95px]
+                      md:w-[110px]
 
                       text-right
+                      font-medium
+                      text-zinc-300
+
+                      text-xs
+                      sm:text-sm
                       "
                     >
-                      {formatNumber(data[row]?.[7])}
+                      {formatNumber(data[row]?.[11])}
                     </span>
 
                     <span
@@ -241,7 +232,7 @@ export default function CollabsTable({
                       justify-center
                       "
                     >
-                      {TrendDot(data[row]?.[8])}
+                      {TrendDot(data[row]?.[12])}
                     </span>
                   </div>
                 </td>

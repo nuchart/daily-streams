@@ -75,9 +75,9 @@ export default function SingelTable({
 
               <th
                 className="
-                w-[75px]
-                sm:w-[85px]
-                md:w-[110px]
+                w-[100px]
+                sm:w-[120px]
+                md:w-[140px]
 
                 px-2
                 py-3
@@ -144,7 +144,7 @@ export default function SingelTable({
                       duration-300
 
                       group-hover:scale-105
-                      group-hover:border-blue-500/30
+                      group-hover:border-zinc-600
                       "
                     />
 
@@ -161,7 +161,7 @@ export default function SingelTable({
                         transition-colors
                         duration-300
 
-                        group-hover:text-blue-50
+                        group-hover:text-zinc-100
                         "
                         title={data[row]?.[5]}
                       >
@@ -196,28 +196,47 @@ export default function SingelTable({
                 {/* DAILY */}
                 <td
                   className="
-                  px-2
-                  py-3
-
-                  text-xs
-                  sm:text-sm
-
-                  font-semibold
-                  text-zinc-300
-
-                  tabular-nums
+                  py-4
+                  pr-4
+                  text-right
                   "
                 >
-                  <div className="flex items-center justify-end">
+                  <div
+                    className="
+                    flex
+                    items-center
+                    justify-end
+                    "
+                  >
+                    <span
+                      className="
+                      w-[80px]
+                      sm:w-[95px]
+                      md:w-[110px]
 
-                    <span className="text-right">
+                      text-right
+                      font-medium
+                      text-zinc-300
+
+                      text-xs
+                      sm:text-sm
+
+                      tabular-nums
+                      "
+                    >
                       {formatNumber(data[row]?.[7])}
                     </span>
 
-                    <span className="w-4 flex justify-center ml-1">
+                    <span
+                      className="
+                      w-4
+                      flex
+                      justify-center
+                      shrink-0
+                      "
+                    >
                       {TrendDot(data[row]?.[8])}
                     </span>
-
                   </div>
                 </td>
 
