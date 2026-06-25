@@ -79,6 +79,7 @@ export default async function Home() {
   const followers = data[7]?.[1];
 
   const lastUpdate = data[9]?.[1];
+  const updateStatus = data[9]?.[3];
 
   const dailyStreamsTotal = data[4]?.[3];
 
@@ -90,7 +91,9 @@ export default async function Home() {
     <main className="min-h-screen bg-black text-white">
 
       {/* HERO HEADER */}
-      <Header lastUpdate={lastUpdate} />
+      <Header 
+      updateStatus={updateStatus}
+      lastUpdate={lastUpdate} />
 
       {/* CONTENT */}
       <div

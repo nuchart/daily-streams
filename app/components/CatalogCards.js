@@ -106,8 +106,8 @@ export default function CatalogCards({
               <Image
                 src={item.cover}
                 alt={item.title}
-                width={48}
-                height={48}
+                width={55}
+                height={55}
                 className="
                 rounded-lg
                 border
