@@ -47,18 +47,18 @@ function TrendDot(value) {
 
   if (trend === "UP") {
     return (
-      <span className="inline-block w-2 h-2 rounded-full bg-green-500 ml-2"></span>
+      <span className="w-2 h-2 rounded-full bg-green-500 block" />
     );
   }
 
   if (trend === "DOWN") {
     return (
-      <span className="inline-block w-2 h-2 rounded-full bg-red-500 ml-2"></span>
+      <span className="w-2 h-2 rounded-full bg-red-500 block" />
     );
   }
 
   return (
-    <span className="inline-block w-2 h-2 rounded-full bg-zinc-500 ml-2"></span>
+    <span className="w-2 h-2 rounded-full bg-zinc-500 block" />
   );
 }
 
