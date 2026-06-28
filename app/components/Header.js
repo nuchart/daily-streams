@@ -11,7 +11,7 @@ export default function Header({
     <header className="relative overflow-hidden">
 
       <Image
-        src="/banner/nuca.jpg"
+        src="/banner/nucat.jpg"
         alt="Nuca"
         width={1600}
         height={900}
@@ -63,25 +63,6 @@ export default function Header({
         "
       >
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-
-          {/* Label */}
-          <div className="flex items-center gap-2 mb-3">
-
-            <div className="w-8 h-[2px] bg-blue-400 rounded-full" />
-
-            <span
-              className="
-                text-[10px]
-                uppercase
-                tracking-[3px]
-                text-blue-300
-                font-semibold
-              "
-            >
-              Nuca Official Data
-            </span>
-
-          </div>
 
           {/* Title */}
           <h1
