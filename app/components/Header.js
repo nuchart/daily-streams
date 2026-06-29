@@ -9,7 +9,7 @@ export default function Header({
 
   return (
     <header className="relative overflow-hidden">
-
+      {/* Banner */}
       <Image
         src="/banner/nucat.jpg"
         alt="Nuca"
@@ -20,9 +20,22 @@ export default function Header({
           w-full
           h-[240px]
           sm:h-[320px]
-          md:h-[400px]
+          md:h-[420px]
+          lg:h-[500px]
+          xl:h-[560px]
+
           object-cover
+          object-center
+
+          md:object-[center_25%]
+          lg:object-[center_18%]
+          xl:object-[center_15%]
+
           scale-105
+          lg:scale-100
+
+          transition-all
+          duration-500
         "
       />
 
@@ -46,6 +59,7 @@ export default function Header({
           left-0
           right-0
           h-32
+          md:h-40
           bg-gradient-to-t
           from-black
           to-transparent
@@ -60,6 +74,7 @@ export default function Header({
           bottom-0
           pb-5
           md:pb-8
+          lg:pb-10
         "
       >
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
@@ -74,6 +89,7 @@ export default function Header({
               font-black
               leading-none
               tracking-tight
+              text-white
             "
           >
             NUCHART STREAMS
@@ -112,10 +128,7 @@ export default function Header({
               "
             >
               <span className="w-2 h-2 rounded-full bg-green-500" />
-
-              <span>
-                {lastUpdate}
-              </span>
+              <span>{lastUpdate}</span>
             </div>
 
             {/* Waiting Status */}
@@ -137,10 +150,7 @@ export default function Header({
                 "
               >
                 <span>⏳</span>
-
-                <span>
-                  Waiting Update
-                </span>
+                <span>Waiting Update</span>
               </div>
             )}
 
@@ -148,7 +158,6 @@ export default function Header({
 
         </div>
       </div>
-
     </header>
   );
 }
