@@ -7,11 +7,6 @@ export default function StatsCards({
 }) {
   const stats = [
     {
-      title: "Total Catalog",
-      value: formatNumber(totalCatalog),
-      icon: "🎵",
-    },
-    {
       title: "Monthly Listeners",
       value: formatNumber(monthlyListeners),
       icon: "🎧",
@@ -20,6 +15,11 @@ export default function StatsCards({
       title: "Followers",
       value: formatNumber(followers),
       icon: "👥",
+    },
+    {
+      title: "Total Catalog",
+      value: formatNumber(totalCatalog),
+      icon: "🎵",
     },
     {
       title: "Daily Streams",
